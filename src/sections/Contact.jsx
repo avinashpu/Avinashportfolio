@@ -23,7 +23,7 @@ const Contact = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const contactInfo = [
+  const ContactInfo = [
   
     {
       icon: MapPin,
@@ -46,7 +46,7 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-28 bg-gray-50 dark:bg-slate-800">
+    <section id="Contact" className="py-28 bg-gray-50 dark:bg-slate-800">
 
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
 
@@ -118,7 +118,7 @@ const Contact = () => {
 
             <div className="space-y-6">
 
-              {contactInfo.map((info, index) => {
+              {ContactInfo.map((info, index) => {
 
                 const Icon = info.icon;
 
