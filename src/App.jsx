@@ -9,7 +9,7 @@ import Experience from './sections/Experience';
 import Projects from './sections/Projects';
 import Services from './sections/Services';
 import Gallery from './sections/Gallery';
-import Contact from './sections/Contact';
+import Contact from './sections/Contact'
 
 function App() {
   return (
