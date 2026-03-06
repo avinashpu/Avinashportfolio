@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { Download, ArrowRight } from 'lucide-react';
 import { PERSONAL_INFO } from '../utils/constants';
 
-import profileImage from "../assets/images/profile.jpg";
+import profileImage from "../assets/images/Profile.jpg";
 import resume from "../assets/resume/Avinash Resume.pdf";
 
 const Hero = () => {
