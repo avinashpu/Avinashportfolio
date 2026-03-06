@@ -52,7 +52,7 @@ const Footer = () => {
           <div>
 
             <h4 className="text-lg font-semibold text-indigo-600 dark:text-white mb-5">
-              Navigation
+              Pages
             </h4>
 
             <ul className="space-y-3">
