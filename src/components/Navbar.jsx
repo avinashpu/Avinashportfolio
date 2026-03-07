@@ -18,7 +18,7 @@ const Navbar = () => {
   const [activeSection, setActiveSection] = useState("home");
   const { isDark, toggleTheme } = useTheme();
 
-  /* Detect scroll background */
+  /* Scroll background */
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 40);
@@ -28,7 +28,7 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  /* Detect active section */
+  /* Active section detection */
   useEffect(() => {
     const sections = navItems.map((item) =>
       document.querySelector(item.href)
@@ -42,9 +42,7 @@ const Navbar = () => {
           }
         });
       },
-      {
-        threshold: 0.6,
-      }
+      { threshold: 0.6 }
     );
 
     sections.forEach((section) => {
@@ -66,7 +64,6 @@ const Navbar = () => {
 
     if (element) {
       const offset = 80;
-
       const position =
         element.getBoundingClientRect().top + window.scrollY - offset;
 
@@ -82,20 +79,21 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
         scrolled
           ? "bg-white/80 dark:bg-slate-900/80 backdrop-blur-lg shadow-md"
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="flex items-center justify-between h-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+
+        <div className="flex items-center justify-between h-16 md:h-20">
 
           {/* Logo */}
           <motion.a
             href="#home"
             onClick={(e) => handleNavClick(e, "#home")}
-            className="text-xl md:text-2xl font-bold bg-gradient-to-r from-indigo-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent"
+            className="text-lg sm:text-xl md:text-2xl font-bold bg-gradient-to-r from-indigo-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent whitespace-nowrap"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
           >
@@ -130,7 +128,7 @@ const Navbar = () => {
               );
             })}
 
-            {/* Theme Toggle */}
+            {/* Theme toggle */}
             <button
               onClick={toggleTheme}
               className="p-2 rounded-lg bg-gray-100 dark:bg-slate-800 hover:bg-gray-200 dark:hover:bg-slate-700 transition"
@@ -144,7 +142,7 @@ const Navbar = () => {
           </div>
 
           {/* Mobile Buttons */}
-          <div className="md:hidden flex items-center gap-3">
+          <div className="md:hidden flex items-center gap-2">
 
             <button
               onClick={toggleTheme}
@@ -159,7 +157,7 @@ const Navbar = () => {
 
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-700 dark:text-gray-300"
+              className="p-1 text-gray-700 dark:text-gray-300"
             >
               {isOpen ? (
                 <X className="w-6 h-6" />
@@ -167,6 +165,7 @@ const Navbar = () => {
                 <Menu className="w-6 h-6" />
               )}
             </button>
+
           </div>
         </div>
       </div>
